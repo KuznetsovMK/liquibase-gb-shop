@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd
+    http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.6.xsd ">
+
+    <changeSet id="before_create_table.USER_ROLE" author="kuznetsov.mihail" context="postgresql"
+               labels="user_role_table">
+        <tagDatabase tag="before_create_user_role_table"/>
+    </changeSet>
+
+    <changeSet id="create_table.USER_ROLE" author="kuznetsov.mihail" context="postgresql" labels="user_role_table">
+        <createTable tableName="USER_ROLE">
+            <column name="USER_ID" type="BIGINT">
+                <constraints primaryKey="true" nullable="false" foreignKeyName="fk_user_role_account_user"
+                             references="ACCOUNT_USER(ID)"/>
+            </column>
+            <column name="ROLE_ID" type="BIGINT">
+                <constraints primaryKey="true" nullable="false" foreignKeyName="fk_user_role_account_role"
+                             references="ACCOUNT_ROLE(ID)"/>/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

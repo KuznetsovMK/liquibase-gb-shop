@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd
+    http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.6.xsd ">
+
+    <changeSet id="before_create_table.ROLE_AUTHORITY" author="kuznetsov.mihail" context="postgresql"
+               labels="role_authority_table">
+        <tagDatabase tag="before_create_role_authority_table"/>
+    </changeSet>
+
+    <changeSet id="create_table.ROLE_AUTHORITY" author="kuznetsov.mihail" context="postgresql" labels="role_authority_table">
+        <createTable tableName="ROLE_AUTHORITY">
+            <column name="ROLE_ID" type="BIGINT">
+                <constraints primaryKey="true" nullable="false" foreignKeyName="fk_role_authority_account_role"
+                             references="ACCOUNT_ROLE(ID)"/>
+            </column>
+            <column name="AUTHORITY_ID" type="BIGINT">
+                <constraints primaryKey="true" nullable="false" foreignKeyName="fk_role_authority_authority"
+                             references="AUTHORITY(ID)"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
