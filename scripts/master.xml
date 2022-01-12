@@ -10,9 +10,5 @@
     <include file="lesson1/create.init.tables.xml" relativeToChangelogFile="true"/>
     <include file="lesson1/create.manufacturer.table.xml" relativeToChangelogFile="true"/>
     <include file="lesson1/product.add.column.manufacturer.id.xml" relativeToChangelogFile="true"/>
-    <include file="lesson1/create.account_user.table.xml" relativeToChangelogFile="true"/>
-    <include file="lesson1/create.account_role.table.xml" relativeToChangelogFile="true"/>
-    <include file="lesson1/create.user_role.table.xml" relativeToChangelogFile="true"/>
-    <include file="lesson1/create.authority.table.xml" relativeToChangelogFile="true"/>
-    <include file="lesson1/create.role_authority.table.xml" relativeToChangelogFile="true"/>
+    <include file="lesson1/create.authority.tables.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>
