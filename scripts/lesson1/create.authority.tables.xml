@@ -72,7 +72,7 @@
             </column>
             <column name="ROLE_ID" type="BIGINT">
                 <constraints primaryKey="true" nullable="false" foreignKeyName="fk_user_role_account_role"
-                             references="ACCOUNT_ROLE(ID)"/>/>
+                             references="ACCOUNT_ROLE(ID)"/>
             </column>
         </createTable>
     </changeSet>
